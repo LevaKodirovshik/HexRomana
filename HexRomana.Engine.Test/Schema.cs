@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Xunit;
 
 namespace HexRomana.Engine.Test
@@ -47,8 +48,17 @@ namespace HexRomana.Engine.Test
         [Fact]
         public void MapCreation()
         {
-            new Map(new(1000, 1000));
+            var map = new Map(new(10, 10));
             Assert.Throws<ArgumentOutOfRangeException>(() => new Map(new(0, 0)));
+            Assert.Equal(map[new(1, 1)], map[1, 1]);
+            var firstCell = map.First();
         }
+        [Fact]
+        public void GameCreation()
+        {
+            new Game(new Map(new(10, 10)), null, null);
+            Assert.Throws<ArgumentNullException>(() => new Game(null, null, null));
+        }
+
     }
 }

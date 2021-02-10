@@ -1,0 +1,33 @@
+{
+  "name": "HexRomana.Web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=development",
+    "release": "webpack --mode=production",
+    "invalid_build": "webpack --mode=development --watch",
+    "invalid_publish": "npm run release && dotnet publish -c Release"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@microsoft/signalr": "^5.0.3",
+    "@types/node": "^14.14.25",
+    "@types/tapable": "^1.0.6",
+    "@types/webpack": "^4.41.26"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.2",
+    "html-webpack-plugin": "^5.0.0",
+    "mini-css-extract-plugin": "^1.3.6",
+    "source-map": "^0.7.3",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.1.5",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
